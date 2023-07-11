@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Status</title>
+</head>
+<body>
+    <form action="{{ url_for('check', pk_id=todo.pk_id) }}" method="get">
+        <input type="hidden" name="status" value="{{ todo.complete_status }}">
+        <button type="submit">{{ 'Done' if todo.complete_status else 'Undone' }}</button>
+    </form>
+</body>
+</html>
